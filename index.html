@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CV – Timeline Dynamique</title>
+  <meta name="description" content="CV dynamique en une page, avec timeline animée." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <header class="hero">
+    <div class="hero__inner container">
+      <div class="hero__id">
+        <div class="avatar" aria-hidden="true">
+          <!-- Remplace src par ta vraie photo (200x200 recommandés) -->
+          <img src="https://via.placeholder.com/200" alt="Photo de profil" />
+        </div>
+        <div class="hero__text">
+          <h1 class="name">Prénom Nom</h1>
+          <p class="role">Gestion de Projet &amp; Innovation</p>
+          <p class="tagline">Orientation résultats • Méthodes agiles • Amélioration continue</p>
+          <div class="cta">
+            <a class="btn" href="#" aria-label="Télécharger le CV en PDF (à connecter)">Télécharger PDF</a>
+            <a class="btn btn--ghost" href="#contact" aria-label="Aller à la section Contact">Me contacter</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="hero__wave" aria-hidden="true"></div>
+  </header>
+
+  <main>
+    <!-- À propos -->
+    <section id="about" class="section container">
+      <h2 class="section__title">À propos</h2>
+      <p class="lead">
+        Court résumé professionnel (2–3 phrases). Remplaçable ensuite par votre contenu réel.
+        Objectif : donner un aperçu clair de votre valeur ajoutée et de vos domaines d’expertise.
+      </p>
+    </section>
+
+    <!-- Timeline Expériences (animée au scroll) -->
+    <section id="experience" class="section section--alt">
+      <div class="container">
+        <h2 class="section__title">Expériences</h2>
+        <div class="timeline" aria-label="Frise chronologique des expériences">
+          <!--
+            Duplique un bloc .timeline__item par expérience.
+            Les éléments s'animent automatiquement lors de l'apparition.
+          -->
+          <article class="timeline__item is-placeholder">
+            <div class="timeline__content">
+              <header class="timeline__header">
+                <h3 class="timeline__role">Titre du poste</h3>
+                <span class="timeline__meta">Année – Année · Entreprise</span>
+              </header>
+              <p class="timeline__desc">Brève description de l'expérience, missions principales, résultats clés…</p>
+              <ul class="timeline__tags">
+                <li>Scrum</li>
+                <li>Coordination</li>
+                <li>Budget</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="timeline__item is-placeholder">
+            <div class="timeline__content">
+              <header class="timeline__header">
+                <h3 class="timeline__role">Titre du poste</h3>
+                <span class="timeline__meta">Année – Année · Entreprise</span>
+              </header>
+              <p class="timeline__desc">Brève description de l'expérience…</p>
+              <ul class="timeline__tags">
+                <li>Planification</li>
+                <li>Stakeholders</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="timeline__item is-placeholder">
+            <div class="timeline__content">
+              <header class="timeline__header">
+                <h3 class="timeline__role">Titre du poste</h3>
+                <span class="timeline__meta">Année – Année · Entreprise</span>
+              </header>
+              <p class="timeline__desc">Brève description de l'expérience…</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Compétences -->
+    <section id="skills" class="section container">
+      <h2 class="section__title">Compétences</h2>
+      <ul class="pills">
+        <li>Gestion de projet</li>
+        <li>Agile / Scrum</li>
+        <li>Roadmapping</li>
+        <li>Analyse de données</li>
+        <li>Communication</li>
+      </ul>
+    </section>
+
+    <!-- Formations -->
+    <section id="education" class="section section--alt">
+      <div class="container">
+        <h2 class="section__title">Formations &amp; Certifications</h2>
+        <div class="cards">
+          <article class="card">
+            <h3>CEFCO — Gestion de projet</h3>
+            <p>2025 (en cours)</p>
+          </article>
+          <article class="card">
+            <h3>Certification X</h3>
+            <p>2023</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="section container">
+      <h2 class="section__title">Contact</h2>
+      <ul class="contact">
+        <li><a href="mailto:prenom.nom@email.com">prenom.nom@email.com</a></li>
+        <li><a href="#" target="_blank" rel="noreferrer">LinkedIn</a></li>
+        <li><a href="#" target="_blank" rel="noreferrer">Portfolio</a></li>
+      </ul>
+      <p class="hint">Astuce : génère un QR code vers cette page pour ta carte de visite.</p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>© <span id="year"></span> • CV dynamique — Timeline</p>
+    </div>
+  </footer>
+
+  <script src="./script.js"></script>
+</body>
+</html>
