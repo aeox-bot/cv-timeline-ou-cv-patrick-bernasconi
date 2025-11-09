@@ -13,24 +13,32 @@
 <body>
   <!-- HERO with integrated photo background -->
   <header class="hero hero--split">
-    <div class="hero__img-wrap">
-      <img src="user_photo.jpg" alt="Portrait de Patrick Bernasconi" />
-      <div class="hero__img-gradient"></div>
+  <div class="hero__img-wrap">
+    <img src="./static/images/user_photo.jpg" alt="Portrait de Patrick Bernasconi" />
+    <div class="hero__img-gradient"></div>
+  </div>
+
+  <div class="hero__panel">
+    <nav class="nav">
+      <a href="#about">Profil</a>
+      <a href="#governance">Gouvernance</a>
+      <a href="#experience">Expériences</a>
+      <a href="#skills">Compétences</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="hero__actions">
+      <button class="btn btn--light" onclick="window.print()">📄 Exporter en PDF</button>
     </div>
 
-    <div class="hero__panel">
-      <div class="hero__actions">
-        <button class="btn btn--light" onclick="window.print()">📄 Exporter en PDF</button>
-      </div>
-
-      <h1 class="name">Patrick<br>Bernasconi</h1>
-      <p class="role">Gestion de Projet &amp; Innovation</p>
-      <p class="tagline">
-        Psychologue spécialisé en réadaptation et gouvernance, en transition vers la gestion de projet —
-        avec une approche humaine, stratégique et orientée solutions.
-      </p>
-    </div>
-  </header>
+    <h1 class="name">Patrick<br>Bernasconi</h1>
+    <p class="role">Gestion de Projet &amp; Innovation</p>
+    <p class="tagline">
+      Psychologue spécialisé en réadaptation et gouvernance, en transition vers la gestion de projet —
+      avec une approche humaine, stratégique et orientée solutions.
+    </p>
+  </div>
+</header>
 
   <main>
     <!-- About / Profil -->
