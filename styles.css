@@ -67,7 +67,61 @@ body{
   margin: 6px 0 4px;
 }
 .role{font-weight:600; color: var(--accent)}
+
 .tagline{color:#e9ecf4; opacity:.92; max-width: 70ch; margin-top:.35rem}
+
+/* ====== HERO SPLIT (conforme maquette) ====== */
+.hero--split {
+  display: grid;
+  grid-template-columns: 56% 44%;
+  min-height: 88vh;
+  background: linear-gradient(180deg, #0d1526 0%, #0e1320 100%);
+}
+
+.hero__img-wrap { position: relative; overflow: hidden; }
+.hero__img-wrap img {
+  width: 100%; height: 100%; object-fit: cover; object-position: 50% 22%;
+  filter: saturate(1.05) contrast(1.02);
+}
+/* Dégradé latéral et bas pour fondre la photo comme la maquette */
+.hero__img-gradient {
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(800px 300px at 95% 50%, rgba(0,0,0,0.45), transparent 60%),
+    linear-gradient(90deg, transparent 70%, rgba(14,19,32,.85) 100%),
+    linear-gradient(180deg, transparent 70%, rgba(14,19,32,.55) 100%);
+  pointer-events: none;
+}
+
+/* Panneau texte */
+.hero__panel {
+  position: relative;
+  display: flex; flex-direction: column; justify-content: center;
+  padding: clamp(28px, 5vw, 56px);
+  color: #f3efe8;
+}
+
+/* Bouton PDF en haut à droite du panneau */
+.hero__actions { position: absolute; top: clamp(16px, 2.5vw, 24px); right: clamp(16px, 3vw, 28px); }
+.btn.btn--light, .hero .btn--light {
+  background: rgba(255,255,255,.08);
+  border: 1px solid rgba(255,255,255,.25);
+  color: #fff; padding: .6rem .9rem; border-radius: 12px; backdrop-filter: blur(6px);
+}
+
+/* Titre et sous-titres sur le panneau */
+.name {
+  font-family: 'Playfair Display', serif; font-weight: 600; line-height: 1.05;
+  letter-spacing: .2px; font-size: clamp(2.4rem, 2rem + 3vw, 4.2rem);
+  margin: 0 0 .4rem 0; color: #f5f2ea; text-shadow: 0 1px 0 rgba(0,0,0,.25);
+}
+.role { font-weight: 600; color: #e8d9b6; font-size: clamp(1.05rem, .9rem + .7vw, 1.4rem); margin-bottom: .35rem; }
+.tagline { max-width: 44ch; color: #dcd7cf; opacity: .95; }
+
+/* Navigation discrète en haut à gauche du hero */
+.hero--split .nav { position: absolute; top: clamp(16px, 2.5vw, 24px); left: clamp(16px, 3vw, 28px); }
+.hero--split .nav a { color: #dfe7ff; text-decoration: none; opacity: .9; }
+.hero--split .nav a:hover { opacity: 1; }
 
 /* ====== Pills / Cards ====== */
 .pills{display:flex; gap:10px; flex-wrap:wrap; list-style:none; padding:0; margin:0}
@@ -142,6 +196,15 @@ body{
   .timeline::before{left: 24px; transform:none}
   .timeline__item{left:auto !important; margin-left: 60px}
   .timeline__item::after{left:-40px !important; right:auto}
+}
+
+/* Responsive pour le split hero */
+@media (max-width: 920px) {
+  .hero--split { grid-template-columns: 1fr; min-height: auto; }
+  .hero__img-wrap { height: 48vh; }
+  .hero__panel { padding: 28px 22px 36px; }
+  .hero--split .nav { position: static; margin-bottom: 10px; }
+  .hero__actions { position: static; margin-left: auto; margin-bottom: 10px; }
 }
 
 /* ====== Print (PDF) ====== */
