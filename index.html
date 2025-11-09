@@ -3,140 +3,150 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>CV – Timeline Dynamique</title>
-  <meta name="description" content="CV dynamique en une page, avec timeline animée." />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
+  <title>CV — Patrick Bernasconi</title>
+  <meta name="description" content="CV dynamique premium — Patrick Bernasconi" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./styles.css" />
 </head>
 <body>
-  <header class="hero">
-    <div class="hero__inner container">
-      <div class="hero__id">
-        <div class="avatar" aria-hidden="true">
-          <!-- Remplace src par ta vraie photo (200x200 recommandés) -->
-          <img src="https://via.placeholder.com/200" alt="Photo de profil" />
-        </div>
-        <div class="hero__text">
-          <h1 class="name">Prénom Nom</h1>
-          <p class="role">Gestion de Projet &amp; Innovation</p>
-          <p class="tagline">Orientation résultats • Méthodes agiles • Amélioration continue</p>
-          <div class="cta">
-            <a class="btn" href="#" aria-label="Télécharger le CV en PDF (à connecter)">Télécharger PDF</a>
-            <a class="btn btn--ghost" href="#contact" aria-label="Aller à la section Contact">Me contacter</a>
-          </div>
-        </div>
+  <!-- HERO with integrated photo background -->
+  <header class="hero" style="--hero-bg: url('./static/images/user_photo.jpg');">
+    <div class="hero__overlay"></div>
+    <div class="container hero__content">
+      <div class="hero__top">
+        <nav class="nav">
+          <a href="#about">Profil</a>
+          <a href="#governance">Gouvernance</a>
+          <a href="#experience">Expériences</a>
+          <a href="#skills">Compétences</a>
+          <a href="#contact">Contact</a>
+        </nav>
+        <button class="btn btn--light" onclick="window.print()">📄 Exporter en PDF</button>
+      </div>
+      <div class="hero__text">
+        <h1 class="name">Patrick Bernasconi</h1>
+        <p class="role">Psychologue &amp; Conseiller en réadaptation professionnelle</p>
+        <p class="tagline">Psychologue spécialisé en réadaptation et gouvernance, en transition vers la gestion de projet — avec une approche humaine, stratégique et orientée solutions.</p>
       </div>
     </div>
-    <div class="hero__wave" aria-hidden="true"></div>
   </header>
 
   <main>
-    <!-- À propos -->
+    <!-- About / Profil -->
     <section id="about" class="section container">
-      <h2 class="section__title">À propos</h2>
+      <h2 class="section__title">🎯 Profil</h2>
       <p class="lead">
-        Court résumé professionnel (2–3 phrases). Remplaçable ensuite par votre contenu réel.
-        Objectif : donner un aperçu clair de votre valeur ajoutée et de vos domaines d’expertise.
+        Plus de 12 ans d’expérience à l’OCAS Genève dans la gestion et le suivi de parcours de réadaptation professionnelle,
+        la coordination entre institutions, employeurs et bénéficiaires, et la mise en œuvre de solutions réalistes et humaines.
+        En transition vers la <strong>gestion de projet</strong> (formation CEFCO &amp; certifications à venir).
       </p>
     </section>
 
-    <!-- Timeline Expériences (animée au scroll) -->
-    <section id="experience" class="section section--alt">
+    <!-- Governance & Strategy -->
+    <section id="governance" class="section section--alt">
       <div class="container">
-        <h2 class="section__title">Expériences</h2>
-        <div class="timeline" aria-label="Frise chronologique des expériences">
-          <!--
-            Duplique un bloc .timeline__item par expérience.
-            Les éléments s'animent automatiquement lors de l'apparition.
-          -->
-          <article class="timeline__item is-placeholder">
-            <div class="timeline__content">
-              <header class="timeline__header">
-                <h3 class="timeline__role">Titre du poste</h3>
-                <span class="timeline__meta">Année – Année · Entreprise</span>
-              </header>
-              <p class="timeline__desc">Brève description de l'expérience, missions principales, résultats clés…</p>
-              <ul class="timeline__tags">
-                <li>Scrum</li>
-                <li>Coordination</li>
-                <li>Budget</li>
-              </ul>
-            </div>
-          </article>
-
-          <article class="timeline__item is-placeholder">
-            <div class="timeline__content">
-              <header class="timeline__header">
-                <h3 class="timeline__role">Titre du poste</h3>
-                <span class="timeline__meta">Année – Année · Entreprise</span>
-              </header>
-              <p class="timeline__desc">Brève description de l'expérience…</p>
-              <ul class="timeline__tags">
-                <li>Planification</li>
-                <li>Stakeholders</li>
-              </ul>
-            </div>
-          </article>
-
-          <article class="timeline__item is-placeholder">
-            <div class="timeline__content">
-              <header class="timeline__header">
-                <h3 class="timeline__role">Titre du poste</h3>
-                <span class="timeline__meta">Année – Année · Entreprise</span>
-              </header>
-              <p class="timeline__desc">Brève description de l'expérience…</p>
-            </div>
-          </article>
+        <h2 class="section__title">🏛 Gouvernance &amp; Stratégie</h2>
+        <div class="governance-item">
+          <span class="date">2018 – 2023</span>
+          <div class="details">
+            <h3>Membre du Conseil d’administration — OCAS Genève</h3>
+            <p>Élu par le personnel. Contribution aux orientations stratégiques, à la gouvernance, aux décisions budgétaires et organisationnelles.
+               Interface entre collaborateurs, direction générale et partenaires publics.</p>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- Compétences -->
-    <section id="skills" class="section container">
-      <h2 class="section__title">Compétences</h2>
-      <ul class="pills">
-        <li>Gestion de projet</li>
-        <li>Agile / Scrum</li>
-        <li>Roadmapping</li>
-        <li>Analyse de données</li>
-        <li>Communication</li>
-      </ul>
+    <!-- Experience Timeline -->
+    <section id="experience" class="section container">
+      <h2 class="section__title">📌 Expériences</h2>
+      <div class="timeline">
+        <article class="timeline__item">
+          <header class="timeline__header">
+            <h3 class="timeline__role">Psychologue — Conseiller en réadaptation professionnelle</h3>
+            <span class="timeline__meta">2012 – Aujourd’hui · OCAS Genève</span>
+          </header>
+          <p class="timeline__desc">
+            Gestion et suivi de parcours de réadaptation professionnelle · Coordination entre employeurs, institutions et bénéficiaires ·
+            Négociation de solutions adaptées (budgets &amp; législations) · Mise en œuvre de projets individuels et collectifs de réinsertion.
+          </p>
+        </article>
+
+        <article class="timeline__item">
+          <header class="timeline__header">
+            <h3 class="timeline__role">Éducateur spécialisé</h3>
+            <span class="timeline__meta">2010 – 2012 · Orif Vernier</span>
+          </header>
+          <p class="timeline__desc">
+            Suivi de projets de formation avec des jeunes · Coordination avec l’Office d’orientation, l’AI et les associations patronales ·
+            Participation au projet d’ouverture d’un nouveau site.
+          </p>
+        </article>
+
+        <article class="timeline__item">
+          <header class="timeline__header">
+            <h3 class="timeline__role">Psychologue — Responsable de lieu de vie thérapeutique</h3>
+            <span class="timeline__meta">2005 – 2009 · Institut Maïeutique</span>
+          </header>
+          <p class="timeline__desc">
+            Gestion d’un lieu accueillant des patients avec lourdes atteintes psychiatriques et jeunes borderline · Encadrement des stagiaires ·
+            Coordination de réseaux pluridisciplinaires.
+          </p>
+        </article>
+      </div>
     </section>
 
-    <!-- Formations -->
-    <section id="education" class="section section--alt">
+    <!-- Skills -->
+    <section id="skills" class="section section--alt">
       <div class="container">
-        <h2 class="section__title">Formations &amp; Certifications</h2>
-        <div class="cards">
-          <article class="card">
-            <h3>CEFCO — Gestion de projet</h3>
-            <p>2025 (en cours)</p>
-          </article>
-          <article class="card">
-            <h3>Certification X</h3>
-            <p>2023</p>
-          </article>
-        </div>
+        <h2 class="section__title">🛠 Compétences</h2>
+        <ul class="pills">
+          <li>Gestion &amp; suivi de projets sociaux</li>
+          <li>Coordination interdisciplinaire</li>
+          <li>Partenariats institutionnels</li>
+          <li>Planification &amp; suivi d’objectifs</li>
+          <li>Communication &amp; négociation</li>
+          <li>Rédaction de rapports</li>
+          <li>Sens stratégique (CA OCAS)</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Education & Languages -->
+    <section id="education" class="section container">
+      <h2 class="section__title">🎓 Formation &amp; Langues</h2>
+      <div class="cards">
+        <article class="card">
+          <h3>Licence en psychologie (équiv. Master)</h3>
+          <p>Université de Lausanne · 2005</p>
+        </article>
+        <article class="card">
+          <h3>Objectif 2025 — Gestion de projet</h3>
+          <p>CEFCO · Certifications à venir</p>
+        </article>
+        <article class="card">
+          <h3>Langues</h3>
+          <p>Italien (maternelle) · Français (quotidien) · Anglais (C1)</p>
+        </article>
       </div>
     </section>
 
     <!-- Contact -->
     <section id="contact" class="section container">
-      <h2 class="section__title">Contact</h2>
+      <h2 class="section__title">✉️ Contact</h2>
       <ul class="contact">
-        <li><a href="mailto:prenom.nom@email.com">prenom.nom@email.com</a></li>
-        <li><a href="#" target="_blank" rel="noreferrer">LinkedIn</a></li>
-        <li><a href="#" target="_blank" rel="noreferrer">Portfolio</a></li>
+        <li><a href="mailto:patrick.bernasconi@example.com">patrick.bernasconi@example.com</a></li>
+        <li><a href="https://www.linkedin.com" target="_blank" rel="noreferrer">LinkedIn</a></li>
       </ul>
-      <p class="hint">Astuce : génère un QR code vers cette page pour ta carte de visite.</p>
+      <p class="hint">Astuce : ajoute un QR code vers ce site sur ta version PDF.</p>
     </section>
   </main>
 
   <footer class="footer">
     <div class="container">
-      <p>© <span id="year"></span> • CV dynamique — Timeline</p>
+      <p>© <span id="year"></span> • CV dynamique — Patrick Bernasconi</p>
     </div>
   </footer>
 
