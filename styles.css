@@ -45,29 +45,30 @@ main {
 
 /* ====== HERO IMMERSIVE (full background blend) ====== */
 .hero-immersive {
-  position: relative;
-  min-height: 100vh;
-  overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: flex-end;
+  min-height: 100vh;
   background: transparent;
+  position: relative;
+  overflow: hidden;
 }
 
 .hero-panel {
   position: relative;
   z-index: 2;
+  width: 45%;
   max-width: 640px;
+  padding: 100px 60px 100px 60px;
   margin-right: 5%;
-  padding: 80px 60px;
+  background: rgba(10, 20, 25, 0.45);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
   color: #f5f2ea;
   text-align: left;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  backdrop-filter: blur(8px);
-  background: rgba(10, 20, 25, 0.35);
-  border-radius: 16px;
   box-shadow: 0 4px 40px rgba(0, 0, 0, 0.4);
 }
 
@@ -196,4 +197,10 @@ main {
     border: 1px solid #ddd;
   }
   .timeline__item::after { left: -20px !important; background: black; box-shadow: none; }
+}
+
+body {
+  background-attachment: fixed;
+  background-size: 120% auto;
+  background-position: left center;
 }
