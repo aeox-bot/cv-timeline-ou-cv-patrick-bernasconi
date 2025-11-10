@@ -49,27 +49,35 @@ main {
   align-items: center;
   justify-content: flex-end;
   min-height: 100vh;
-  background: transparent;
   position: relative;
+  background: linear-gradient(to right, rgba(14,19,32,0.3) 0%, rgba(14,19,32,0.5) 40%, rgba(14,19,32,0.9) 100%),
+              url('user_photo.jpg') left center / 100% auto no-repeat fixed;
+  background-blend-mode: overlay;
   overflow: hidden;
 }
 
 .hero-panel {
   position: relative;
   z-index: 2;
-  width: 45%;
+  width: 42%;
   max-width: 640px;
-  padding: 100px 60px 100px 60px;
   margin-right: 5%;
   background: rgba(10, 20, 25, 0.45);
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(12px);
   border-radius: 16px;
   color: #f5f2ea;
   text-align: left;
+  padding: 80px 60px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   box-shadow: 0 4px 40px rgba(0, 0, 0, 0.4);
+  animation: fadeInHero 1.2s ease-out forwards;
+}
+
+@keyframes fadeInHero {
+  from { opacity: 0; transform: translateX(40px); }
+  to { opacity: 1; transform: translateX(0); }
 }
 
 .hero-panel h1.name {
@@ -197,10 +205,4 @@ main {
     border: 1px solid #ddd;
   }
   .timeline__item::after { left: -20px !important; background: black; box-shadow: none; }
-}
-
-body {
-  background-attachment: fixed;
-  background-size: 120% auto;
-  background-position: left center;
 }
