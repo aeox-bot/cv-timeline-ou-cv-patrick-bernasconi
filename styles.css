@@ -53,13 +53,13 @@ main {
 }
 
 .hero-photo {
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   width: 45vw;
-  height: 100vh;
-  background: linear-gradient(to right, rgba(14,19,32,0.3) 0%, rgba(14,19,32,0.4) 60%, rgba(14,19,32,0.95) 100%), url('user_photo.jpg') center/cover no-repeat;
-  background-attachment: fixed;
+  height: 100%;
+  background: linear-gradient(to right, rgba(14,19,32,0.2) 0%, rgba(14,19,32,0.35) 50%, rgba(14,19,32,0.9) 100%), url('user_photo.jpg') center/cover no-repeat;
+  background-attachment: scroll;
   background-blend-mode: overlay;
   filter: brightness(0.95) saturate(1.1);
   z-index: 0;
