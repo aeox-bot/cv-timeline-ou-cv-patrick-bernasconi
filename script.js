@@ -1,9 +1,9 @@
-// Reveal timeline items on scroll + current year
+// Reveal timeline items and sections on scroll + update current year
 document.addEventListener('DOMContentLoaded', () => {
   const y = document.getElementById('year');
   if (y) y.textContent = new Date().getFullYear();
 
-  const items = document.querySelectorAll('.timeline__item');
+  const elements = document.querySelectorAll('.timeline__item, .section');
   const io = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
         io.unobserve(entry.target);
       }
     });
-  }, { threshold: 0.2 });
-  items.forEach(el => io.observe(el));
+  }, { threshold: 0.15 });
+
+  elements.forEach(el => io.observe(el));
 });
