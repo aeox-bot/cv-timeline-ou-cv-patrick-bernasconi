@@ -34,34 +34,42 @@ body{
 }
 .lead{max-width:65ch; color: var(--muted)}
 
-/* ====== HERO SPLIT (photo left + panel right) ====== */
-.hero-split{
-  display:grid;
-  grid-template-columns: 48% 52%;
+/* ====== HERO BLENDED (photo integrated in background) ====== */
+.hero-split {
+  position: relative;
   min-height: 88vh;
-  isolation:isolate;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
 }
-.hero-photo{ position: relative; overflow: hidden; }
-.hero-photo img{
-  width:100%; height:100%;
-  object-fit:cover; object-position: 50% 18%;
-  filter: saturate(1.03) contrast(1.03);
+
+.hero-photo {
+  position: absolute;
+  inset: 0;
+  background: url('./static/images/user_photo.jpg') center/cover no-repeat;
+  filter: brightness(0.85) saturate(1.1);
+  z-index: 0;
 }
-.hero-photo-overlay{
-  position:absolute; inset:0;
-  background:
-    radial-gradient(800px 320px at 96% 50%, rgba(0,0,0,.45), transparent 60%),
-    linear-gradient(90deg, transparent 68%, var(--panel-strong) 100%),
-    linear-gradient(180deg, transparent 70%, rgba(14,19,32,.55) 100%);
-  pointer-events:none;
+
+.hero-photo::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(14,19,32,0.75) 0%, rgba(10,20,25,0.85) 40%, rgba(20,60,70,0.9) 100%);
+  z-index: 1;
 }
-.hero-panel{
-  background: linear-gradient(180deg, var(--panel) 0%, var(--panel-strong) 100%);
+
+.hero-panel {
+  position: relative;
+  z-index: 2;
+  max-width: 640px;
+  margin-left: auto;
+  padding: 80px 60px;
   color: #f5f2ea;
-  display:flex; flex-direction:column; justify-content:center;
-  padding: clamp(28px, 5vw, 56px);
-  position:relative;
-  box-shadow: inset 0 0 60px rgba(0,0,0,.15);
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 .hero-top{ display:flex; justify-content:space-between; align-items:center; margin-bottom: 16px; }
 .nav{ display:flex; gap:14px; flex-wrap:wrap; }
