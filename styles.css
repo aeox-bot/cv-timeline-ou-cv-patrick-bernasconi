@@ -1,24 +1,24 @@
 /* ====== Theme ====== */
 :root{
-  --bg: #0e1320;
-  --bg-alt:#121933;
+  --bg: #0b2228;
+  --bg-alt: #11333b;
   --text:#e9ecf4;
   --muted:#a9b1c6;
   --accent:#9ec3ff;
   --accent-2:#f2d6a2;
-  --card:#141a2e;
-  --line:#2b3353;
+  --card: #14333d;
+  --line: #26545f;
   --shadow: rgba(0,0,0,.35);
-  --panel: #2f4553;
-  --panel-strong: #294250;
+  --panel: #1c3c43;
+  --panel-strong: #15454e;
 }
 
 *{box-sizing:border-box}
 html,body{margin:0;padding:0}
 body {
   font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-  background: linear-gradient(to right, rgba(14,19,32,0.3) 0%, rgba(14,19,32,0.5) 45%, rgba(14,19,32,0.9) 100%);
-  background-color: #0e1320;
+  background: linear-gradient(to right, rgba(11,34,40,0.3) 0%, rgba(11,34,40,0.5) 45%, rgba(11,34,40,0.9) 100%);
+  background-color: #0b2228;
   color: var(--text);
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
@@ -49,9 +49,9 @@ main {
   justify-content: flex-end;
   min-height: 100vh;
   position: relative;
-  background: linear-gradient(to right, rgba(14,19,32,0.15) 0%, rgba(14,19,32,0.4) 35%, rgba(14,19,32,0.85) 100%),
+  background: linear-gradient(to right, rgba(11,34,40,0.15) 0%, rgba(11,34,40,0.45) 35%, rgba(11,34,40,0.9) 100%),
               url('user_photo.jpg') left center / contain no-repeat fixed;
-  background-color: #0e1320;
+  background-color: #0b2228;
   background-blend-mode: overlay;
   overflow: hidden;
   background-attachment: fixed;
