@@ -25,7 +25,10 @@ body{
 }
 
 main {
-  /* margin-left: 45vw; */
+  margin-left: 45vw;
+  background: var(--bg);
+  position: relative;
+  z-index: 1;
 }
 
 .container{width:min(1120px, 92vw); margin-inline:auto}
@@ -50,25 +53,16 @@ main {
 }
 
 .hero-photo {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
+  width: 45vw;
   height: 100vh;
-  background: linear-gradient(90deg, rgba(14,19,32,0.4) 0%, rgba(10,20,25,0.6) 45%, rgba(20,60,70,0.9) 100%), url('user_photo.jpg') center/cover no-repeat;
-  background-attachment: scroll;
+  background: linear-gradient(to right, rgba(14,19,32,0.3) 0%, rgba(14,19,32,0.4) 60%, rgba(14,19,32,0.95) 100%), url('user_photo.jpg') center/cover no-repeat;
+  background-attachment: fixed;
   background-blend-mode: overlay;
   filter: brightness(0.95) saturate(1.1);
-  z-index: -1;
-}
-
-.hero-photo::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(90deg, rgba(14,19,32,0.4) 0%, rgba(10,20,25,0.7) 45%, rgba(20,60,70,1) 100%);
-  z-index: 1;
-  opacity: 1;
+  z-index: 0;
 }
 
 .hero-panel {
