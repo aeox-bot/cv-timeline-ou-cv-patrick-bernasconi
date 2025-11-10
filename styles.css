@@ -34,13 +34,15 @@ body{
 }
 .lead{max-width:65ch; color: var(--muted)}
 
-/* ====== HERO BLENDED (photo integrated in background) ====== */
-.hero-split {
+/* ====== HERO IMMERSIVE (full background blend) ====== */
+.hero-immersive {
   position: relative;
-  min-height: 88vh;
+  min-height: 100vh;
   overflow: hidden;
   display: flex;
   align-items: center;
+  justify-content: flex-end;
+  background: var(--bg);
 }
 
 .hero-photo {
@@ -55,43 +57,52 @@ body{
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(90deg, rgba(14,19,32,0.75) 0%, rgba(10,20,25,0.85) 40%, rgba(20,60,70,0.9) 100%);
+  background: linear-gradient(90deg, rgba(14,19,32,0.65) 0%, rgba(10,20,25,0.85) 50%, rgba(20,60,70,0.95) 100%);
+  mix-blend-mode: multiply;
   z-index: 1;
+  transition: opacity 0.8s ease-in-out;
 }
 
 .hero-panel {
   position: relative;
   z-index: 2;
   max-width: 640px;
-  margin-left: auto;
+  margin-right: 5%;
   padding: 80px 60px;
   color: #f5f2ea;
   text-align: left;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  backdrop-filter: blur(8px);
+  background: rgba(10, 20, 25, 0.35);
+  border-radius: 16px;
+  box-shadow: 0 4px 40px rgba(0, 0, 0, 0.4);
 }
-.hero-top{ display:flex; justify-content:space-between; align-items:center; margin-bottom: 16px; }
-.nav{ display:flex; gap:14px; flex-wrap:wrap; }
-.nav a{ color:#dfe7ff; text-decoration:none; opacity:.9 }
-.nav a:hover{ opacity:1 }
-.btn.btn--light{
-  background: rgba(255,255,255,.08);
-  border: 1px solid rgba(255,255,255,.25);
-  color: #fff; padding:.6rem .9rem; border-radius:12px; backdrop-filter: blur(6px);
-}
-.name{
+
+.hero-panel h1.name {
   font-family: 'Playfair Display', serif;
-  font-weight: 600; line-height: 1.05; letter-spacing: .2px;
-  font-size: clamp(2.4rem, 2rem + 3vw, 4.2rem);
-  margin: 2px 0 6px 0; color: #f5f2ea; text-shadow: 0 1px 0 rgba(0,0,0,.25);
+  font-weight: 600;
+  line-height: 1.05;
+  font-size: clamp(2.6rem, 2.1rem + 2.5vw, 4.5rem);
+  color: #fdfdfc;
+  text-shadow: 0 3px 12px rgba(0, 0, 0, 0.45);
 }
-.role{
-  font-weight:600; color:#e8d9b6;
-  font-size: clamp(1.05rem, .9rem + .7vw, 1.35rem);
-  margin: 0 0 .35rem 0;
+
+.hero-panel .role {
+  color: #d8e8ff;
+  font-weight: 600;
+  font-size: clamp(1.1rem, 0.9rem + 0.8vw, 1.4rem);
+  margin-bottom: 0.5rem;
 }
-.tagline{ max-width: 44ch; color: #efeae0; opacity:.96; }
+
+.hero-panel .tagline {
+  max-width: 46ch;
+  color: #f2ede9;
+  opacity: 0.95;
+  font-weight: 400;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.25);
+}
 
 /* ====== Pills / Cards ====== */
 .pills{display:flex; gap:10px; flex-wrap:wrap; list-style:none; padding:0; margin:0}
@@ -161,9 +172,9 @@ body{
 
 /* ====== Responsive ====== */
 @media (max-width: 960px){
-  .hero-split{ grid-template-columns: 1fr; min-height: auto; }
+  .hero-immersive{ min-height: auto; }
   .hero-photo{ height: 48vh; }
-  .hero-panel{ padding: 28px 22px 36px; }
+  .hero-panel{ padding: 28px 22px 36px; margin-right: 3%; }
   .hero-top{ flex-direction: column; align-items: flex-start; gap: 8px; }
   .timeline::before{ left: 24px; transform:none }
   .timeline__item{ left:auto !important; margin-left: 60px }
@@ -173,7 +184,7 @@ body{
 /* ====== Print (PDF) ====== */
 @media print {
   body { background: white; color: black; }
-  .hero-split, .section--alt, .footer { background: white !important; color: black; }
+  .hero-immersive, .section--alt, .footer { background: white !important; color: black; }
   .hero-photo, .hero-photo-overlay, .hero-panel { filter: none !important; box-shadow: none !important; }
   .nav, .btn, .hint { display: none !important; }
   .tagline { color: #333; }
