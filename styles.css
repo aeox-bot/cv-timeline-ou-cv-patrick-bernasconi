@@ -50,28 +50,41 @@ main {
   justify-content: flex-end;
   min-height: 100vh;
   position: relative;
-  background: linear-gradient(to right, rgba(14,19,32,0.3) 0%, rgba(14,19,32,0.5) 40%, rgba(14,19,32,0.9) 100%),
-              url('user_photo.jpg') left center / 100% auto no-repeat fixed;
+  background: linear-gradient(to right, rgba(14,19,32,0.15) 0%, rgba(14,19,32,0.4) 35%, rgba(14,19,32,0.85) 100%),
+              url('user_photo.jpg') left center / contain no-repeat fixed;
+  background-color: #0e1320;
   background-blend-mode: overlay;
   overflow: hidden;
+  background-attachment: fixed;
+}
+
+.hero-immersive::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to bottom, transparent 80%, rgba(14,19,32,1) 100%);
+  pointer-events: none;
 }
 
 .hero-panel {
   position: relative;
   z-index: 2;
-  width: 42%;
-  max-width: 640px;
-  margin-right: 5%;
-  background: rgba(10, 20, 25, 0.45);
-  backdrop-filter: blur(12px);
-  border-radius: 16px;
+  width: 48%;
+  max-width: 700px;
+  margin-right: 6%;
+  background: rgba(10, 20, 25, 0.35);
+  backdrop-filter: blur(10px);
+  border-radius: 18px;
   color: #f5f2ea;
   text-align: left;
-  padding: 80px 60px;
+  padding: 90px 70px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  box-shadow: 0 4px 40px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 6px 45px rgba(0, 0, 0, 0.5);
   animation: fadeInHero 1.2s ease-out forwards;
 }
 
